@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <th scope="row">{{product._id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.qty}}</td>
+      <td>${{product.price}}</td>
+      <td>
+        <button [routerLink]="['/product',product._id,'edit']" class="btn btn-primary" type="button" name="button">Edit</button>
+        <button [routerLink]="['/product',product._id]"class="btn btn-secondary"type="button" name="button">Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
