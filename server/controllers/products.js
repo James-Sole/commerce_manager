@@ -27,7 +27,7 @@ module.exports = {
     });
   },
   update: (req, res)=> {
-    Product.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, (err, product) => {
+    Product.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, runValidators: true, context: 'true'}, (err, product) => {
       if (err){
         return res.status(400).json(err);
       }

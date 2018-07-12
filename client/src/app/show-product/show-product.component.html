@@ -5,16 +5,16 @@
     <div class="col-10">
       <h3>Product Details</h3>
       <small class="text-danger">To delete a product, the Qty must be 0</small>
-      <div>
+      <div class="card">
       <label for="">Name:</label>
       <p>{{product.name}}</p>
       <label for="">Qty:</label>
       <p>{{product.qty}}</p>
       <label for="">Price:</label>
       <p>${{product.price}}</p>
+      <button class="btn btn-outline-warning" [routerLink]="['/product']" type="button" name="button">Back</button>
+      <button class="btn btn-outline-danger"[disabled]="zero" (click)="delete()" type="button" name="button">Delete</button>
       </div>
-      <button [routerLink]="['/product']" type="button" name="button">Back</button>
-      <button [disabled]="zero" (click)="delete()" type="button" name="button">Delete</button>
     </div>
     <div class="col">
     </div>

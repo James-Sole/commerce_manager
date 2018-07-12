@@ -4,10 +4,8 @@
     </div>
     <div class="col-10">
       <h3>New Product</h3>
-      {{product | json}}
-      {{setProduct | json}}
       <small class="text-danger" *ngIf="errors">{{errors.message}}</small>
-      <form (submit)="editProduct()">
+      <form (submit)="editProduct()" #form="ngForm">
         <div class="form-group">
           <label for="product.name">Name</label>
           <input

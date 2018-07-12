@@ -5,7 +5,7 @@
     <div class="col-10">
       <h3>New Product</h3>
       <small class="text-danger" *ngIf="errors">{{errors.message}}</small>
-      <form (submit)="newProduct()">
+      <form (submit)="newProduct()" #form="ngForm">
         <div class="form-group">
           <label for="product.name">Name</label>
           <input
@@ -50,7 +50,7 @@
           Price is required</small>
         </div>
         <button (click)="reset()" class="btn btn-primary" type="button" name="button">Reset</button>
-        <button [disabled]="form.invalid" class="btn btn-secondary" type="submit" name="button">Create</button>
+        <button class="btn btn-secondary" type="submit" name="button">Create</button>
       </form>
     </div>
     <div class="col">

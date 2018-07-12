@@ -26,6 +26,13 @@ export class EditProductComponent implements OnInit {
       this._httpService.getProduct(params.id).subscribe(
           (product: Product) => {
               this.product = product[0];
+              let something = {
+                name: product[0].name,
+                price: product[0].price,
+                qty: product[0].qty
+              }
+              this.setProduct = something;
+
           },
           (err: any) => {
               console.log(err);
@@ -35,11 +42,14 @@ export class EditProductComponent implements OnInit {
 
   }
   editProduct(){
-    let tempObservable = this._httpService.createProducts(this.product);
+    console.log(this.product);
+    let tempObservable = this._httpService.editProduct(this.product);
     tempObservable.subscribe(data => console.log("creats our products!", data));
+    this._router.navigate(['/product']);
   }
   reset(){
-    this.product = this.setProduct);
+
+    this.product = this.setProduct;
   }
 
 }

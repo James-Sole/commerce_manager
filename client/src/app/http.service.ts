@@ -20,9 +20,9 @@ export class HttpService {
     // our http response is an Observable, store it in a variable
     return this._http.get('/products/'+ id);
   }
-  editProduct(id, product){
+  editProduct(product){
     // our http response is an Observable, store it in a variable
-    return this._http.patch('/products/'+ id, product);
+    return this._http.patch('/products/'+ product._id, product);
   }
   deleteProducts(id){
     // our http response is an Observable, store it in a variable
